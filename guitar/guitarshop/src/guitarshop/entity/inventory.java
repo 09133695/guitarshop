@@ -10,5 +10,4 @@ public class inventory {
 	public void setguitars(List<guitar> guitars) {
 		this.guitars = guitars;
 	}
-
 }

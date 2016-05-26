@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import guitarshop.dal.inventoryDal;
+import guitarshop.bll.inventoryBll;
 import guitarshop.entity.guitar;
 import guitarshop.entity.guitarspec;
 
@@ -45,7 +45,7 @@ public class macthguitar extends HttpServlet {
 		// 调用inventoryDal的match（）方法，传入spec对象作为参数，遍历数据库中所有guitar与之匹配
 		// 并将结果返回给matchingGuitars
 		try {
-			matchingGuitars = inventoryDal.match(spec);
+			matchingGuitars = inventoryBll.match(spec);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -18,34 +18,8 @@ import guitarshop.entity.guitarspec;
 
 public class inventoryDal {
 
-	public static boolean addGuitar(String serialNumber, double price, String builder, String mobile, String type,
-			String backWood, String topWood)
-	// 添加吉他
-	{
-		int i = 0;
-		Connection connection = obdc.getConnection();
-		PreparedStatement pstat;
-		try {
-			pstat = connection.prepareStatement(
-					"insert into guitar(serialNumber,price,builder,mobile,type,backWood,topWood) values(?,?,?,?,?,?,?)");
-			pstat.setString(1, serialNumber);
-			pstat.setDouble(2, price);
-			pstat.setString(3, builder);
-			pstat.setString(4, mobile);
-			pstat.setString(5, type);
-			pstat.setString(6, backWood);
-			pstat.setString(7, topWood);
-			i = pstat.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return i > 0;
-	}
-
 	public static List<guitar> allGuitars() // 获取所有吉他
 	{
-
 		List<guitar> guitars = new ArrayList<guitar>();
 		Connection connection = obdc.getConnection();
 		PreparedStatement pstat;
@@ -62,7 +36,6 @@ public class inventoryDal {
 				guitar.setBackWood(rs.getString("backwood"));
 				guitar.setType(rs.getString("type"));
 				guitar.setModel(rs.getString("model"));
-
 				guitars.add(guitar);
 			}
 		} catch (SQLException e) {
@@ -99,4 +72,30 @@ public class inventoryDal {
 		}
 		return matchingGuitars;
 	}
+//
+//	public static boolean addGuitar(String serialNumber, double price, String builder, String mobile, String type,
+//			String backWood, String topWood)
+//	// 添加吉他
+//	{
+//		int i = 0;
+//		Connection connection = obdc.getConnection();
+//		PreparedStatement pstat;
+//		try {
+//			pstat = connection.prepareStatement(
+//					"insert into guitar(serialNumber,price,builder,mobile,type,backWood,topWood) values(?,?,?,?,?,?,?)");
+//			pstat.setString(1, serialNumber);
+//			pstat.setDouble(2, price);
+//			pstat.setString(3, builder);
+//			pstat.setString(4, mobile);
+//			pstat.setString(5, type);
+//			pstat.setString(6, backWood);
+//			pstat.setString(7, topWood);
+//			i = pstat.executeUpdate();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return i > 0;
+//	}
+
 }

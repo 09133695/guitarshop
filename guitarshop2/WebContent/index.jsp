@@ -8,7 +8,7 @@
 </head>
 <body>
 <a href="allguitars.jsp">显示所有吉他</a>
-<form action="macthguitar">
+<form action="search">
 type<input type="text" name="type"/>
 model<input type="text" name="model"/>
 builder<input type="text" name="builder"/>

@@ -1,4 +1,4 @@
-package guitarshop;
+package main.entity;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

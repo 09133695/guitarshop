@@ -21,14 +21,14 @@
 			<td>backWood</td>
 			<td>topWood</td>
 		</tr>
-	<c:forEach items="${aaa}" var="bbb" varStatus="status">
-			<td>${bbb.getSerialNumber()}</td>
-				<td>${bbb.getPrice()}</td>
-				<td>${bbb.getSpec().getBuilder()}</td>
-				<td>${bbb.getSpec().getModel()}</td>
-				<td>${bbb.getSpec().getType()}</td>
-				<td>${bbb.getSpec().getTopWood()}</td>
-				<td>${bbb.getSpec().getBackWood()}</td>
+	<c:forEach items="${matchingGuitars}" var="guitars" varStatus="status">
+			<td>${guitars.getSerialNumber()}</td>
+				<td>${guitars.getPrice()}</td>
+				<td>${guitars.getSpec().getBuilder()}</td>
+				<td>${guitars.getSpec().getModel()}</td>
+				<td>${guitars.getSpec().getType()}</td>
+				<td>${guitars.getSpec().getTopWood()}</td>
+				<td>${guitars.getSpec().getBackWood()}</td>
 			</tr>
 	</c:forEach>
 	</table>

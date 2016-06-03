@@ -1,5 +1,7 @@
 package main.entity;
 
+import main.dal.GuitarDal;
+
 public class Guitar {
 
 	  private String serialNumber;
@@ -11,7 +13,14 @@ public class Guitar {
 	    this.price = price;
 	    this.spec = spec;
 	  }
-
+	  public static void addGuitar(String serialNumber, double price,GuitarSpec guitarspec)
+	  {
+		  GuitarDal.addGuitar(serialNumber, price, guitarspec);
+	  }
+	  public static void delateGuitar(String serialNumber)
+	  {
+		  GuitarDal.delateGuitar(serialNumber);
+	  }
 	  public String getSerialNumber() {
 	    return serialNumber;
 	  }

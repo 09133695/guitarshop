@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.TeacherDao">
+
+    <!--告诉MyBatis把结果映射到Student同时映射teacher属性-->
+    <select id="queryStudentWithTeacher" resultType="com.ssm.entity.Student">
+        select s.sid,s.sname,s.gender,s.age,s.address,
+        t.tname as "teacher.tname",
+        t.job as "teacher.job"
+        from student s INNER JOIN teacher t on s.teacher_id = t.tid
+        where tid = #{tid};
+    </select>
+
+</mapper>
